@@ -5,7 +5,7 @@ import nodemailer from 'nodemailer'
 import cors from 'cors'
 dotenv.config()
 
-const port = 3000
+const port = 4000
 const app = express()
 
 app.use(cors())
