@@ -47,7 +47,7 @@ app.post('/send', (request, response) => {
       console.log('email enviado com sucesso!')
     })
 
-    return response.json()
+    return response.json('helloo send email.')
   }
 
   run()
