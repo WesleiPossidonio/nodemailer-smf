@@ -39,7 +39,7 @@ app.post('/send', (request, response) => {
   // console.log(process.env.EMAIL, process.env.PASSWORD)
 
   async function run() {
-    transporter.sendMail(sendEmail, (err) => {
+    await transporter.sendMail(sendEmail, (err) => {
       if (err) {
         console.log(err)
       }
@@ -47,7 +47,7 @@ app.post('/send', (request, response) => {
       console.log('email enviado com sucesso!')
     })
 
-    return response.json('helloo send email.')
+    return response.json({ name })
   }
 
   run()
