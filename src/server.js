@@ -47,7 +47,7 @@ app.post('/send', (request, response) => {
       console.log('email enviado com sucesso!')
     })
 
-    return response.json({ name })
+    return response.json()
   }
 
   run()
