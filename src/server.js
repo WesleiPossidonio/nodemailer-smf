@@ -29,14 +29,56 @@ app.post('/send', (request, response) => {
 
   console.log(service)
 
+  const htmlTemplate = `
+  <!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+  </head>
+  
+  <style>
+      * {
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+          padding: 0.5rem;
+      }
+      .header{
+          display: flex;
+          align-items: center;
+      }
+  
+      .footer {
+          display: flex;
+          flex-direction: column;
+          padding: 0;
+      }
+  </style>
+  <body>
+      <header class="header">
+          <h1>${service}</h1> -
+          <h1>${name}</h1>
+      </header>
+      <main>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, ullam! Sunt perspiciatis nemo pariatur commodi, architecto quisquam incidunt consequatur? Nobis possimus, at sapiente et hic distinctio sint nisi! Rem, aliquam?</p>
+          <footer class="footer">
+              <span> E-mail: ${email}</span>  
+              <span> Telefone: ${phone}</span>
+          </footer>
+      </main>
+  </body>
+  </html>
+  `
+
   const sendEmail = {
     from: `${name} <${email}>`,
     to: process.env.EMAIL,
     subject: `${service}`,
-    text: `${menssage} ${phone}`,
+    html: htmlTemplate,
   }
-
-  // console.log(process.env.EMAIL, process.env.PASSWORD)
 
   async function run() {
     await transporter.sendMail(sendEmail, (err) => {
