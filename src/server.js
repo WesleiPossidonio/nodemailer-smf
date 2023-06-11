@@ -44,7 +44,6 @@ app.post('/send', (request, response) => {
           padding: 0;
           margin: 0;
           box-sizing: border-box;
-          padding: 0.5rem;
       }
       .header{
           display: flex;
@@ -56,16 +55,26 @@ app.post('/send', (request, response) => {
           flex-direction: column;
           padding: 0;
       }
+
+      .contacts {
+          display: flex;
+          align-itens: center;
+      }
+
+
   </style>
   <body>
       <header class="header">
-          <h1>${service} - ${name}</h1>
+          <h1>${service}</h1>
       </header>
       <main>
           <p>${menssage}</p>
           <footer class="footer">
-              <span> E-mail: ${email}</span>  
-              <span> Telefone: ${phone}</span>
+           <span> Att: ${name} </span>
+             <div class="contacts"> 
+                 <span> E-mail: ${email}</span>  
+                 <span> Telefone: ${phone}</span>
+             </div>
           </footer>
       </main>
   </body>
