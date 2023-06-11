@@ -63,7 +63,7 @@ app.post('/send', (request, response) => {
           <h1>${name}</h1>
       </header>
       <main>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, ullam! Sunt perspiciatis nemo pariatur commodi, architecto quisquam incidunt consequatur? Nobis possimus, at sapiente et hic distinctio sint nisi! Rem, aliquam?</p>
+          <p>${menssage}</p>
           <footer class="footer">
               <span> E-mail: ${email}</span>  
               <span> Telefone: ${phone}</span>
