@@ -59,7 +59,7 @@ app.post('/send', (request, response) => {
   </style>
   <body>
       <header class="header">
-          <h1>${service} - ${name}</h1> -git
+          <h1>${service} - ${name}</h1>
       </header>
       <main>
           <p>${menssage}</p>
